@@ -14,7 +14,6 @@ public class temperatureConvertor extends JFrame implements ActionListener {
     private JComboBox inputComboBox;
     private JLabel outcomeLabel;
     private JLabel titleLabel;
-    private JComboBox outputComboBox;
 
     public temperatureConvertor() {
         convertButton.addActionListener(new ActionListener() {
@@ -49,9 +48,9 @@ public class temperatureConvertor extends JFrame implements ActionListener {
             double result = (selectedUnit.equals("Celsius")) ? convertToFahrenheit(inputTemperature) : convertToCelsius(inputTemperature);
             outputText.setText(String.valueOf(result));
             if (selectedUnit.equals("Celsius")) {
-                outcomeLabel.setText("Celsius");
-            } else {
                 outcomeLabel.setText("Fahrenheit");
+            } else {
+                outcomeLabel.setText("Celsius");
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(temperatureConvertor.this, "Invalid input", "Error", JOptionPane.ERROR_MESSAGE);
